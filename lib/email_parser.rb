@@ -4,24 +4,24 @@
 # or whitespace (' ').
 
 class EmailParser
-  @@parse_array = []
-  @@redundancy_checker = {}
   def initialize(input_string)
+    parse_array = []
+    redundancy_checker = {}
     no_spaces_array = input_string.split(" ")
     no_spaces_array.each {|email|
-      if email.scan(/,$/) != nil && @@redundancy_checker[email.split(",")[0]] == nil
+      if email.scan(/,$/) != nil && redundancy_checker[email.split(",")[0]] == nil
         fixed = email.split(",")[0]
-        @@parse_array << fixed
-        @@redundancy_checker[fixed] = "already here"
+        parse_array << fixed
+        redundancy_checker[fixed] = "already here"
       elsif email.scan(/,$/) == nil && @@redundancy_checker[email] == nil
-        @@parse_array << email
-        @@redundancy_checker[email] = "already here"
+        parse_array << email
+        redundancy_checker[email] = "already here"
       end
     }
   end
 
   def parse
-    @@parse_array
+    parse_array
   end
 end
 
