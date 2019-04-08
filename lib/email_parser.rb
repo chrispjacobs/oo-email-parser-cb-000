@@ -25,6 +25,6 @@ class EmailParser
   end
 end
 
-#emails = EmailParser.new("john@doe.com, person@somewhere.org, other@whatever.com bob@gmail.com person@somewhere.org")
-#puts emails.parse
-# puts EmailParser.new("avi@test.com, avi@test.com").parse
+emails = EmailParser.new("john@doe.com, person@somewhere.org, other@whatever.com bob@gmail.com person@somewhere.org")
+puts emails.parse
+puts EmailParser.new("avi@test.com, avi@test.com").parse
