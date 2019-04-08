@@ -21,7 +21,7 @@ class EmailParser
   end
 
   def parse
-    parse_array
+    @parse_array
   end
 end
 
